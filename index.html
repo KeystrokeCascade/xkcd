@@ -1,0 +1,19 @@
+<script>
+
+var xmlhttp = new XMLHttpRequest();
+//var url = "https://derpibooru.org/search.json?q=cute";
+var url = "https://xkcd.com/info.0.json";
+
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myArr = JSON.parse(this.responseText);
+        myFunction(myArr);
+    }
+};
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+function myFunction(arr) {
+    console.log(JSON.stringify(arr))
+}
+</script>
