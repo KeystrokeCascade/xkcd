@@ -8,11 +8,11 @@
     <a href="http://jquery.com/">jQuery</a>
     <script src="jquery.js"></script>
     <script>
- 
+
     $.ajax({
-      type: "POST",
-      url: "~/pythoncode.py",
-      data: {param: text}
+        type: "POST",
+        url: "~/pythoncode.py",
+        //data: {param: text}
     }).done(function(data) {
        console.log(data)
     });
