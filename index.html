@@ -1,26 +1,9 @@
 <script>
-/*
-var xmlhttp = new XMLHttpRequest();
-var url = "https://www.explainxkcd.com/wiki/api.php?action=parse&prop=images&page=Main_Page&redirects=true&format=json";
-
-xmlhttp.onreadystatechange = function() {
-	if (this.readyState == 4 && this.status == 200) {
-		var myArr = JSON.parse(this.responseText);
-		myFunction(myArr);
-	}
-};
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
-
-function myFunction(arr) {
-	console.log(JSON.stringify(arr))
-}
-*/
-
-fetch("https://www.explainxkcd.com/wiki/api.php?action=parse&prop=images&page=Main_Page&redirects=true&format=json")
-.then(function(data){
-	var json = JSON.parse(data)
-	console.log(JSON.stringify(json))
-})
-
+$.ajax({
+  type: "POST",
+  url: "~/pythoncode.py",
+  data: { param: text}
+}).done(function(data) {
+   console.log(data)
+});
 </script>
