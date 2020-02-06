@@ -5,20 +5,16 @@
     <title>Demo</title>
 </head>
 <body>
-    <a href="http://jquery.com/">jQuery</a>
-    <script src="jquery.js"></script>
-    <script>
+<script>
 
-    $.ajax({
-        method: "POST",
-        //url: "test.txt",
-        url: "~/pythoncode.py",
-        //data: {param: text}
-    }).done(function(data) {
-        console.log("hello world")
-        console.log(data)
-    });
- 
-    </script>
+fetch('https://xkcd.now.sh/?comic=latest')
+  .then(response => {
+    return response.json()
+  })
+  .then(data => {
+    console.log(JSON.stringify(data))
+  })
+
+</script>
 </body>
 </html>
