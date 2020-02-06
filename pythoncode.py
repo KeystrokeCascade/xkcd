@@ -1,2 +1,1 @@
-def test(test):
-    return "hello world" + test
+return "hello world"
