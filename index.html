@@ -1,27 +1,26 @@
 <script>
-
+/*
 var xmlhttp = new XMLHttpRequest();
-//var url = "https://derpibooru.org/search.json?q=cute";
-var url = "https://xkcd.com/info.0.json";
+var url = "https://www.explainxkcd.com/wiki/api.php?action=parse&prop=images&page=Main_Page&redirects=true&format=json";
 
 xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        var myArr = JSON.parse(this.responseText);
-        myFunction(myArr);
-    }
+	if (this.readyState == 4 && this.status == 200) {
+		var myArr = JSON.parse(this.responseText);
+		myFunction(myArr);
+	}
 };
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
 
 function myFunction(arr) {
-    console.log(JSON.stringify(arr))
+	console.log(JSON.stringify(arr))
 }
-
-/*
-fetch("https://xkcd.com/info.0.json")
-.then(function(data){
-  var json = JSON.parse(data)
-  console.log(JSON.stringify(json))
-})
 */
+
+fetch("https://www.explainxkcd.com/wiki/api.php?action=parse&prop=images&page=Main_Page&redirects=true&format=json")
+.then(function(data){
+	var json = JSON.parse(data)
+	console.log(JSON.stringify(json))
+})
+
 </script>
