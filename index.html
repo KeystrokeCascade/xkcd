@@ -4,15 +4,16 @@
 <script type="text/javascript" src="app.js" defer="defer"></script>
 <link rel="shortcut icon" href="icon.ico" type="image/ico">
 
-<body>
+<body id="center">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<h1>
+<!--<h1>
 	XKCD Search
-</h1>
+</h1>-->
+<div id="img"></div>
 <div>
-	<iframe src="https://duckduckgo.com/search.html?width=200&duck=yes&prefill=Search DuckDuckGo&focus=yes" class="duck" frameborder="0"></iframe>
+	<iframe id="duck" src="https://duckduckgo.com/search.html?width=408&duck=yes&prefill=Search DuckDuckGo&focus=yes" frameborder="0"></iframe>
 </div>
 <div>
 	Special thanks to mrmartineau for his <a href='https://github.com/mrmartineau/xkcd-api'>xkcd JSON API</a> that actually allows CORS

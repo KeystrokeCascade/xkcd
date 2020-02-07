@@ -1,7 +1,17 @@
-.duck {
+#center {
+	text-align: center;
+}
+
+#img {
+	padding-top: 50px;
+	padding-bottom: 25px;
+}
+
+#duck {
 	overflow: hidden;
 	margin: auto;
-	padding: 0;
-	width: 100%;
+	display: inline-block;
+	padding: 25px;
+	width: 541px;
 	height: 60px;
 }
