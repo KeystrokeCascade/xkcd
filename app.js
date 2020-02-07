@@ -1,16 +1,20 @@
+//fetches the latest xkcd comic
 fetch('https://xkcd.now.sh/?comic=latest')
 	.then(response => {
 		return response.json()
 	})
 	.then(data => {
-		console.log(JSON.stringify(data))
-		
+
+		//creates image element and assigns the comic to it
 		var img = document.createElement("img");
 		img.src = data.img;
-		//img.width = width;
-		//img.height = height;
-		img.alt = data.alt;
+		img.title = data.alt;
+		
+		//creates anchor element and assigns a link to it
+		var a = document.createElement("A")
+		a.href = "https://xkcd.com/" + data.num
 
-		// This next line will just add it to the <body> tag
-		document.getElementById("img").appendChild(img);
+		//attaches the image to the id
+		document.getElementById("img").appendChild(a);
+		document.querySelector("a").appendChild(img);
 	})
