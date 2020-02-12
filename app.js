@@ -1,9 +1,13 @@
 //fetches the latest xkcd comic
-fetch('https://xkcd.now.sh/?comic=latest')
+fetch("https://xkcd.now.sh/?comic=latest")
 	.then(response => {
 		return response.json()
 	})
 	.then(data => {
+
+		//generates a random xkcd number
+		var rand = Math.ceil(Math.random() * Math.floor(data.num))
+		console.log(rand)
 
 		//creates image element and assigns the comic to it
 		var img = document.createElement("img");
