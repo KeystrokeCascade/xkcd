@@ -1,5 +1,5 @@
 <!doctype html>
-<title>XKCD Search</title>
+<title>xkcd search</title>
 <link rel="stylesheet" type="text/css" href="style.css"></link>
 <script type="text/javascript" src="app.js" defer="defer"></script>
 <link rel="shortcut icon" href="icon.ico" type="image/ico">
@@ -10,20 +10,29 @@
 
 <div id="img"></div>
 <div id="form">
-	<form method="get" action="https://duckduckgo.com/" autocomplete="off">
+	<form method="get" action="" autocomplete="off">
 		<input type="text" name="q" placeholder="Search">
 		<input type="submit" value="">
 	</form>
-	
-<!--	<form method="get" action="https://www.google.com/search" autocomplete="off">
-		<input type="text" name="q">
-		<input type="submit" value="Search">
-	</form> -->
 </div>
-<div>
-	<p>Special thanks to mrmartineau for his <a href='https://github.com/mrmartineau/xkcd-api'>xkcd JSON API</a> that actually allows CORS</p>
-	<p>Search icon provided by <a href="http://glyphish.com/">Glyphish</a></p>
-</div>
-<div id="settings">
-</div>
+<div id="settings" onclick="settings()"></div>
+	<ul id="dropdown" class="dropdown-content">
+		<li>
+		<select id="search" onchange="getSearch()">
+			<option value="google">Google</option>
+			<option value="duckduckgo">DuckDuckGo</option>
+			<option value="bing">Bing</option>
+		</select>
+		</li>
+		<a href='https://github.com/mrmartineau/xkcd-api'>
+			<li>
+				xkcd JSON API
+			</li>
+		</a>
+		<a href="http://glyphish.com/">
+			<li>
+				Glyphish Icons
+			</li>
+		</a>
+	</ul>
 </body>
