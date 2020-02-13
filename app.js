@@ -9,9 +9,11 @@ fetch("https://xkcd.now.sh/?comic=latest")
 		var current = data.num;
 		var lastXKCD = localStorage.getItem("current_xkcd")
 		if (lastXKCD != current) {
+		
 			//sets latest xkcd
 			setXKCD(data, current);
 		} else {
+			
 			//generates a random xkcd number
 			var rand = Math.ceil(Math.random() * Math.floor(current));
 			
@@ -21,6 +23,7 @@ fetch("https://xkcd.now.sh/?comic=latest")
 					return response.json()
 				})
 				.then(data => {
+					
 					//sets random xkcd
 					setXKCD(data, current);
 				})
