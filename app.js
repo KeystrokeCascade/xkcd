@@ -65,6 +65,11 @@ function settings() {
 //gets search engine
 function getSearch() {
 	var search = document.getElementById("search").value;
+
+	//sets local storage with preferred search engine
+	localStorage.setItem("searchEngine", search)
+	
+	//sets the chosen search engine
 	if (search == "google") {
 		search = "https://www.google.com/search"
 	} else if (search == "duckduckgo") {
@@ -72,9 +77,16 @@ function getSearch() {
 	} else {
 		search = "https://bing.com"
 	}
+
 	//sets form
 	var form = document.querySelector("form");
 	form.action = search;
 }
+
+//sets search engine to what was last used
+var searchEngine = localStorage.getItem("searchEngine")
+var select = document.querySelector("option[value='" + searchEngine + "']")
+select.selected = "selected"
+
 
 getSearch();
