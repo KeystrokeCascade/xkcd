@@ -85,8 +85,10 @@ function getSearch() {
 
 //sets search engine to what was last used
 var searchEngine = localStorage.getItem("searchEngine")
+if (searchEngine != null) {
+	searchEngine = "google"
+}
 var select = document.querySelector("option[value='" + searchEngine + "']")
 select.selected = "selected"
-
 
 getSearch();
